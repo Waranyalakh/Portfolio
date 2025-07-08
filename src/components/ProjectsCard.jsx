@@ -2,7 +2,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState } from "react";
 
-const imageModules = import.meta.glob("../assets/project/*.png", {
+const imageModules = import.meta.glob("/project/*.png", {
   eager: true,
 });
 const projectImages = Object.entries(imageModules).map(([path, module]) => {

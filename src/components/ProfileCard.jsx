@@ -1,4 +1,4 @@
-import photo from "../assets/img1.png";
+import photo from "/img1.png";
 
 const ProfileCard = () => (
    <div className="card bg-gradient-to-br from-base-100 to-base-200 shadow-2xl border border-primary hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">

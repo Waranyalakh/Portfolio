@@ -1,10 +1,10 @@
 
-import htmlLogo from "../assets/html.png";
-import cssLogo from "../assets/css.png";
-import javaScriptLogo from "../assets/javascript.png";
-import vueLogo from "../assets/vue.png";
-import aspLogo from "../assets/NETCore.png";
-import microsoftLogo from "../assets/microsoft-sql.svg";
+import htmlLogo from "/html.png";
+import cssLogo from "/css.png";
+import javaScriptLogo from "/javascript.png";
+import vueLogo from "/Vue.png";
+import aspLogo from "/NETCore.png";
+import microsoftLogo from "/microsoft-sql.svg";
 
 const skills = [
   { src: htmlLogo, alt: "html" },
