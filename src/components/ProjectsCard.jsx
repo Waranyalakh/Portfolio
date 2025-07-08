@@ -2,14 +2,17 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState } from "react";
 
-const imageModules = import.meta.glob("/project/*.png", {
-  eager: true,
-});
-const projectImages = Object.entries(imageModules).map(([path, module]) => {
-  const fileName = path.split("/").pop();
-  const alt = fileName.replace(/\.[^/.]+$/, "");
-  return { src: module.default, alt };
-});
+const projectImages = [
+  { src: "/project/project1.png", alt: "project1" },
+  { src: "/project/project2.png", alt: "project2" },
+  { src: "/project/project3.png", alt: "project3" },
+  { src: "/project/project4.png", alt: "project4" },
+  { src: "/project/project5.png", alt: "project5" },
+  { src: "/project/project6.png", alt: "project6" },
+  { src: "/project/project7.png", alt: "project7" },
+  { src: "/project/project8.png", alt: "project8" },
+  { src: "/project/project9.png", alt: "project9" },
+];
 
 const ProjectsCard = () => {
   const [selectedImage, setSelectedImage] = useState(null);
