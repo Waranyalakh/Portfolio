@@ -1,49 +1,26 @@
-
-import htmlLogo from "/html.png";
-import cssLogo from "/css.png";
-import javaScriptLogo from "/javascript.png";
-import vueLogo from "/Vue.png";
-import aspLogo from "/NETCore.png";
-import microsoftLogo from "/microsoft-sql.svg";
-
-const skills = [
-  { src: htmlLogo, alt: "html" },
-  { src: cssLogo, alt: "css" },
-  { src: javaScriptLogo, alt: "javascript" },
-  { src: vueLogo, alt: "Vue" },
-  { src: aspLogo, alt: "NETCore" },
-  { src: microsoftLogo, alt: "microsoft-sql" },
+const skillGroups = [
+  ["Programming Languages", ["Python", "JavaScript", "C", "C#", "Java"]],
+  ["Frontend Development", ["React.js", "Vue.js", "HTML", "CSS"]],
+  ["Backend & Database", ["Python Backend Development", "SQLAlchemy", "PostgreSQL", "SQL Server"]],
+  ["Hardware & Embedded Systems", ["Arduino", "Arduino Uno R4 WiFi", "Load Cell", "HX711", "Sensor Integration"]],
 ];
 
-const SkillsCard = () => (
-    
-  <div className="card bg-gradient-to-br from-base-100 to-base-200 shadow-2xl border border-primary hover:shadow-3xl transition-all duration-300">
-    <div className="card-body p-8">
-      <div className="flex items-center justify-center mb-2">
-        <div className="badge badge-primary badge-lg px-6 py-3">
-          <h2 className="text-lg font-bold text-primary-content">ทักษะ</h2>
-        </div>
-      </div>
-      
-      <div className="divider divider-primary"></div>
-      
-      <ul className="grid grid-cols-3 gap-4 justify-items-center mt-4">
-        {skills.map(({ src, alt }) => (
-          <li key={alt} className="group">
-            <div className="avatar">
-              <div className="w-30 h-30 rounded-2xl ring ring-primary ring-offset-base-100 ring-offset-2 group-hover:ring-offset-4 transition-all duration-300 bg-base-100 hover:bg-base-100 shadow-lg group-hover:shadow-xl">
-                <img
-                  src={src}
-                  alt={alt}
-                  className="w-full h-full rounded-2xl object-contain p-2 group-hover:scale-100 transition-transform duration-300"
-                />
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-);
+export default function SkillsCard({ standalone = false }) {
+  const Heading = standalone ? "h1" : "h2";
 
-export default SkillsCard;
+  return (
+    <>
+      <Heading className="section-heading">Technical Skills</Heading>
+      <div className="two-columns">
+        {skillGroups.map(([group, skills]) => (
+          <article className="card padded" key={group}>
+            <h3>{group}</h3>
+            <ul className="tags">
+              {skills.map((skill) => <li key={skill}>{skill}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </>
+  );
+}

@@ -1,9 +1,9 @@
-const Skill = () => {
-    return (
-        <div className="skill">
-            <h1>About Page</h1>
-            <p>This is the about page of our application.</p>
-        </div>
-    );
+import SkillsCard from "../components/SkillsCard";
+
+export default function Skill() {
+  return (
+    <main id="skill" className="shell page">
+      <SkillsCard standalone />
+    </main>
+  );
 }
-export default Skill;
